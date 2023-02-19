@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- flex: One Dimensions grid: Two Dimensions -->
+    <style>
+      body {
+        background-color: #222222;
+      }
+      .grid-item {
+        margin: 2px;
+        /* padding: 5px; */
+        background-color: cyan;
+        /* height: 50px; */
+      }
+      .grid-container {
+        display: grid;
+        margin: auto;
+        /*1. grid-template-columns: 200px 100px; */
+
+        /* 1. grid-template-columns: 2fr 1fr; */
+        /* 2. grid-template-columns: repeat(4, 100px); */
+        /* grid-template-rows: 200px 150px; */
+
+        /* if we don't know how many rows */
+        /* 2. grid-auto-rows: 150px; */
+        /* this will work on first row only and other takes auto */
+        /* 2. grid-template-rows: 200px; */
+
+        /* 3 */
+        grid-template-columns: 200px 250px; /* all*/
+        /* this will overflow extra stuff */
+        /* grid-auto-rows: 150px; */
+        /* to fix that */
+        /* grid-auto-rows: minmax(150px, auto); */
+
+        /* 4 gap */
+        /* all grid-template-columns: 200px 250px;
+        grid-auto-rows: minmax(150px, auto); */
+
+        /* i can do this */
+        /* grid-row-gap: 20px;
+        grid-column-gap: 10px; */
+        /* or */
+        /* grid-gap: 20px; */
+
+        /* 5 */
+        /* grid-template-columns: 400px 500px;
+        grid-auto-rows: minmax(150px, auto);
+        grid-gap: 20px;
+        grid-template-areas:
+          "header header"
+          "sidebar content"
+          "sidebar content"; */
+
+        /* 6 alternative to 5 */
+        grid-template-columns: 400px 550px;
+        grid-auto-rows: minmax(150px, auto);
+        grid-gap: 20px;
+
+        /* 7 */
+        justify-content: space-around;
+        align-content: stretch;
+
+        background-color: white;
+      }
+
+      /* 5 */
+      .grid-item-1 {
+        /* 6 */
+        /* grid-column-start: 1; */
+        /* 1 from end */
+        /* grid-column-end: -1; */
+
+        /* or */
+        /* grid-column: 1 / -1; */
+
+        /* or */
+
+        grid-column: span 1;
+
+        /* 7 */
+        align-self: end;
+        justify-self: end;
+
+        /* grid-area: header; */
+      }
+      .grid-item-2 {
+        /* 6 */
+        /* grid-area: sidebar; */
+
+        /* last or */
+        grid-row: span 2;
+      }
+      .grid-item-3 {
+        /* 6 */
+        /* grid-area: content; */
+
+        grid-column: span 1;
+      }
+      .grid-item-4 {
+        /* grid-area: sidebar; */
+
+        grid-column: span 1;
+      }
+      .grid-item-5 {
+        /* grid-area: content; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <h3 class="grid-item grid-item-1">
+        grid item 1
+        <!-- on 3 -->
+        <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        assumenda eos pariatur id voluptates, dolorum laboriosam laudantium
+        perspiciatis at expedita suscipit nisi cupiditate sequi nobis optio
+        autem commodi possimus illum. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Voluptate assumenda eos pariatur id voluptates,
+        dolorum laboriosam laudantium perspiciatis at expedita suscipit nisi
+        cupiditate sequi nobis optio autem commodi possimus illum. -->
+      </h3>
+      <h3 class="grid-item grid-item-2">
+        grid item 2
+        <!-- on 3 -->
+        <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, quasi
+        iusto quaerat suscipit omnis odio voluptatem, dolorem rem autem sunt id
+        aut veniam ullam facilis? -->
+      </h3>
+      <h3 class="grid-item grid-item-3">Grid Item 3</h3>
+      <h3 class="grid-item grid-item-4">Grid Item 4</h3>
+      <h3 class="grid-item grid-item-5">Grid Item 5</h3>
+      <h3 class="grid-item grid-item-6">Grid Item 6</h3>
+      <h3 class="grid-item grid-item-7">Grid Item 7</h3>
+    </div>
+  </body>
+</html>
