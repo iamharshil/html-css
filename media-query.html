@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        color: red;
+      }
+      .title {
+        font-size: 6rem;
+      }
+      .subtitle {
+        font-size: 4rem;
+      }
+
+      /* all type */
+      /* @media all and (max-width: 500px) {
+        body {
+          color: blue;
+        }
+      } */
+
+      /* until width less than 500px */
+      @media (max-width: 500px) {
+        body {
+          color: blue;
+        }
+      }
+
+      /* when we print page */
+      /* @media print {
+        body {
+          color: blue;
+        }
+      } */
+
+      /* this will override media query so color always be red */
+      /* body {
+        color: red;
+      } */
+
+      /* on portrait */
+      /* @media (orientation: portrait) and (max-width: 500px) {
+        .subtitle {
+          color: cyan;
+        }
+      } */
+      /* alternative to and is or so */
+      @media (orientation: portrait), (max-width: 500px) {
+        .subtitle {
+          color: cyan;
+        }
+      }
+
+      /* alternative to max width where if width exceed then it wil works. */
+      @media (orientation: portrait), (min-width: 1000px) {
+        .subtitle {
+          color: lime;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">Title</div>
+    <div class="subtitle">Sub Title</div>
+  </body>
+</html>
